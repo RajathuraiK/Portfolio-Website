@@ -1,0 +1,8 @@
+{
+  "name": "Rajathurai K Portfolio",
+  "description": "A premium minimal editorial portfolio for Rajathurai K, showcasing cybersecurity expertise and modern digital design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
