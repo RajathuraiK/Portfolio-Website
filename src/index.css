@@ -28,6 +28,55 @@
   }
 }
 
+/* Background Image Styles */
+.bg-cyber-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.bg-image {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  filter: blur(12px);
+  transform: translate(-10%, -10%);
+}
+
+.floating-1 {
+  animation: float-1 20s ease-in-out infinite alternate;
+}
+
+.floating-2 {
+  animation: float-2 25s ease-in-out infinite alternate;
+}
+
+.floating-3 {
+  animation: float-3 30s ease-in-out infinite alternate;
+}
+
+@keyframes float-1 {
+  0% { transform: translate(-10%, -10%) scale(1); }
+  100% { transform: translate(-5%, -5%) scale(1.1); }
+}
+
+@keyframes float-2 {
+  0% { transform: translate(-10%, -10%) rotate(0deg); }
+  100% { transform: translate(-15%, -15%) rotate(5deg); }
+}
+
+@keyframes float-3 {
+  0% { transform: translate(-10%, -10%) scale(1.1); }
+  100% { transform: translate(-15%, -5%) scale(1); }
+}
+
 /* Custom Cursor - Optional but nice for premium feel */
 .custom-cursor {
   width: 20px;

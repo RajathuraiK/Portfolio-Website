@@ -6,17 +6,46 @@ import {
   Phone, 
   ExternalLink, 
   Download, 
-  ChevronDown,
-  ArrowRight,
-  Shield,
-  Layers,
-  Terminal,
-  Cpu,
-  Monitor
+  ChevronDown, 
+  ArrowRight, 
+  Shield, 
+  Layers, 
+  Terminal, 
+  Cpu, 
+  Monitor 
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import cyberCircuitry from "./assets/cyber_circuitry_new.png";
+import cyberNetwork from "./assets/cyber_network_new.png";
+import cyberInterface from "./assets/cyber_interface_new.png";
+import profilePic from "./assets/profile.png";
 
 // --- Components ---
+
+const BackgroundImages = () => {
+  return (
+    <div className="bg-cyber-container">
+      <img 
+        src={cyberCircuitry} 
+        alt="" 
+        className="bg-image floating-1" 
+        style={{ opacity: 0.6 }}
+      />
+      <img 
+        src={cyberNetwork} 
+        alt="" 
+        className="bg-image floating-2" 
+        style={{ opacity: 0.5 }}
+      />
+      <img 
+        src={cyberInterface} 
+        alt="" 
+        className="bg-image floating-3" 
+        style={{ opacity: 0.4 }}
+      />
+    </div>
+  );
+};
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -95,9 +124,6 @@ const Hero = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="z-10 text-center"
       >
-        <span className="inline-block px-6 py-2 border border-white/10 rounded-full text-[10px] uppercase tracking-[0.4em] font-bold mb-8 text-zinc-500">
-          Portfolio 2024 / Vol 01
-        </span>
         
         <h1 className="text-5xl md:text-[8rem] font-serif tracking-tighter leading-tight mb-12 text-center text-white">
           <motion.span 
@@ -117,12 +143,11 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 1.2 }}
             className="w-full h-full rounded-full border border-white/5 p-4 flex items-center justify-center relative z-10"
           >
-            <div className="w-full h-full rounded-full overflow-hidden bg-zinc-900 border border-white/10 grayscale hover:grayscale-0 transition-all duration-1000">
+            <div className="w-full h-full rounded-full overflow-hidden bg-zinc-900 border border-white/10 group-hover:border-white/30 transition-all duration-1000 shadow-[0_0_50px_rgba(255,255,255,0.05)] group-hover:shadow-[0_0_50px_rgba(255,255,255,0.1)]">
               <img 
-                src="https://picsum.photos/seed/rajathurai/800/800" 
+                src={profilePic} 
                 alt="Rajathurai K" 
-                className="w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000"
-                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover scale-[2.0] translate-y-[-12%] group-hover:scale-[2.1] transition-transform duration-1000 brightness-[1.05] contrast-[1.05]"
               />
             </div>
             <div className="absolute -bottom-2 right-8 bg-white text-black px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-tighter shadow-xl">
@@ -564,7 +589,8 @@ export default function App() {
   return (
     <>
       {loading && <Loader onComplete={() => setLoading(false)} />}
-      <main className="font-sans antialiased selection:bg-white selection:text-black cursor-none bg-paper">
+      <main className="font-sans antialiased selection:bg-white selection:text-black cursor-none bg-paper relative">
+        <BackgroundImages />
         <motion.div 
           className="custom-cursor hidden lg:flex items-center justify-center overflow-hidden"
           animate={{ 
@@ -578,6 +604,7 @@ export default function App() {
         <Navbar />
         
         <motion.div
+          className="relative z-10"
           animate={{ opacity: loading ? 0 : 1 }}
           transition={{ duration: 1 }}
         >
